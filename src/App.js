@@ -7,13 +7,19 @@ import { InMemoryCache } from "apollo-cache-inmemory"
 import { onError } from "apollo-link-error"
 import { ApolloLink } from "apollo-link"
 import { split } from "apollo-link"
-mport { WebSocketLink } from "apollo-link-ws"
+import { WebSocketLink } from "apollo-link-ws"
 import { getMainDefinition } from "apollo-utilities"
 import { createHttpLink } from "apollo-link-http"
 import { setContext } from "apollo-link-context"
 
 
 import { makeStyles, useTheme } from "@material-ui/core/styles"
+import {
+  HeaderImageContext,
+  headerImageReducer,
+  initialState as headerInitialState,
+  setHeaderImage,
+} from "./Contexts/HeaderImageContext"
 
 import logo from './logo.svg';
 import './App.css';
