@@ -27,7 +27,7 @@ import {
 } from "./Contexts/UserContext";
 
 import { HomePage } from "./HomePage"
-
+import { Layout } from './Component/Layout'
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -89,25 +89,26 @@ function App() {
 
   return (<div className="App">
     <SearchContext.Provider value={dispatch}>
-          <UserContext.Provider value={userDispatch}>
+        <UserContext.Provider value={userDispatch}>
             <ApolloProvider client={client}>
             {/* add ThemeProvider */}
-                <Router>
-                  <Switch>
-                    <Route
-                      exact
-                      path="/"
-                      render={(props) => {
-                        return (
-                          <HomePage
-                            {...props}
-                          />
-                        )
-                      }}
-                    />  
-                  </Switch>
-                
-              </Router>
+              <Layout>
+                  <Router>
+                    <Switch>
+                      <Route
+                        exact
+                        path="/"
+                        render={(props) => {
+                          return (
+                            <HomePage
+                              {...props}
+                            />
+                          )
+                        }}
+                      />  
+                    </Switch>    
+                </Router>
+              </Layout>
             </ApolloProvider>
           </UserContext.Provider>
     </SearchContext.Provider>
