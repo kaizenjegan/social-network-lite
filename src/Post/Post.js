@@ -1,5 +1,4 @@
 import React from "react"
-import {DashboardCard } from "./DashboardCard"
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -10,11 +9,11 @@ const useStyles = makeStyles((theme) => ({
     }
   }));
   
-export const HomePage = (props) => {
+export const Post = (props) => {
     const classes = useStyles();
     return(
         <div className={classes.root}>
-            <DashboardCard {...props} />
+            post
         </div>
     )
 }

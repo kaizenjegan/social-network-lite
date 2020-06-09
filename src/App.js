@@ -27,6 +27,7 @@ import {
 } from "./Contexts/UserContext";
 
 import { HomePage } from "./HomePage"
+import { Post } from "./Post"
 import { Layout } from './Component/Layout'
 
 import logo from "./logo.svg";
@@ -103,6 +104,15 @@ function App() {
                             <HomePage
                               {...props}
                             />
+                          )
+                        }}
+                      />  
+                      <Route
+                        exact
+                        path={"/post/:postId"}
+                        render={(props) => {
+                          return (
+                            <Post {...props} />
                           )
                         }}
                       />  

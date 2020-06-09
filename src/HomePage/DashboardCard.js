@@ -12,6 +12,7 @@ import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
+import MessageIcon from '@material-ui/icons/Message';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { makeStyles } from '@material-ui/core/styles';
@@ -22,7 +23,7 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles((theme) => ({
   root: {
     // paddingBottom: '50px'
-    marginBottom: "10px"
+    marginTop: "10px"
   },
   media: {
     height: 0,
@@ -38,6 +39,11 @@ const useStyles = makeStyles((theme) => ({
     transition: theme.transitions.create('transform', {
       duration: theme.transitions.duration.shortest,
     }),
+  },
+  header:{
+    // color: "red",
+    // fontSize: "10pt",
+    // height: "1px"
   },
   expandOpen: {
     transform: 'rotate(180deg)',
@@ -62,10 +68,20 @@ export const DashboardCard = (props) => {
     setCard(
       [{
         body: "This ixmpressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
-        img: "/place-holder.jpeg"
+        img: "/place-holder.jpeg",
+        reactions: {
+          likes: 0,
+          claps: 0,
+          loves: 0
+        }
       },{
         body: "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
-        img: "/place-holder.jpeg"
+        img: "/place-holder.jpeg",
+        reactions: {
+          likes: 0,
+          claps: 0,
+          loves: 0
+        }
       }]
     )
   },[])
@@ -74,11 +90,21 @@ export const DashboardCard = (props) => {
       cards.map( card => 
           {
             return <Card className={classes.root}>
-            <CardActionArea>
+              
+            <CardActionArea>        
               <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                  Lizard
-                </Typography>
+                <CardHeader
+                  className={classes.header}
+                  action={
+                    <IconButton aria-label="settings">
+                      <MoreVertIcon />
+                    </IconButton>
+                  }
+                  title="Mr Chorizo likes this"
+                />
+                {/* <Avatar aria-label="recipe" className={classes.avatar}>
+                    R
+                  </Avatar>  */}
                 <Typography variant="body2" color="textSecondary" component="p">
                   {card.body}
                 </Typography>
@@ -91,11 +117,33 @@ export const DashboardCard = (props) => {
             </CardActionArea>
             <CardActions>
               <Button size="small" color="primary">
-                Share
+                Reaction
               </Button>
               <Button size="small" color="primary">
-                Learn More
+                Comments
               </Button>
+            </CardActions>
+            <CardActions>
+            <IconButton aria-label="add to favorites">
+              <FavoriteIcon />
+            </IconButton>
+            <IconButton size="small" color="primary" 
+                onClick={() => {
+                    props.history.push("/post/4273956")
+                  }}>
+                <MessageIcon/>
+                Comment
+            </IconButton>
+            <IconButton aria-label="share">
+              <ShareIcon />
+            </IconButton>
+              {/* <Button size="small" color="primary">
+                Like
+              </Button>
+              <Button size="small" color="primary">
+                Comment
+              </Button> */}
+              
             </CardActions>
           </Card>
           
