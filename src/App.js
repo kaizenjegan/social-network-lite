@@ -93,7 +93,7 @@ function App() {
         <UserContext.Provider value={userDispatch}>
             <ApolloProvider client={client}>
             {/* add ThemeProvider */}
-              <Layout>
+              
                   <Router>
                     <Switch>
                       <Route
@@ -101,9 +101,9 @@ function App() {
                         path="/"
                         render={(props) => {
                           return (
-                            <HomePage
-                              {...props}
-                            />
+                            <Layout {...props}>
+                                <HomePage {...props}  />
+                            </Layout>
                           )
                         }}
                       />  
@@ -112,13 +112,15 @@ function App() {
                         path={"/post/:postId"}
                         render={(props) => {
                           return (
-                            <Post {...props} />
+                            <Layout {...props}>
+                                <Post {...props} />
+                            </Layout>
                           )
                         }}
                       />  
                     </Switch>    
                 </Router>
-              </Layout>
+              
             </ApolloProvider>
           </UserContext.Provider>
     </SearchContext.Provider>

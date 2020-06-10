@@ -8,7 +8,7 @@ export const Layout = (props) =>{
             <Header />
             {/* {this.props.children} */}
                 {props.children}
-            <Footer />
+            <Footer {...props} />
         </div>
     )
 }

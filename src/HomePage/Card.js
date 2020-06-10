@@ -21,75 +21,44 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    // paddingBottom: '50px'
-    marginTop: "10px"
-  },
-  media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
-    
-  },
-  fullCard: {
-    width: "100%"
-  },
-  expand: {
-    transform: 'rotate(0deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-  },
-  header:{
-    // color: "red",
-    // fontSize: "10pt",
-    // height: "1px"
-  },
-  expandOpen: {
-    transform: 'rotate(180deg)',
-  },
-  avatar: {
-    backgroundColor: red[500],
-  },
-}));
+    root: {
+      // paddingBottom: '50px'
+      marginTop: "10px"
+    },
+    media: {
+      height: 0,
+      paddingTop: '56.25%', // 16:9
+      
+    },
+    fullCard: {
+      width: "100%"
+    },
+    expand: {
+      transform: 'rotate(0deg)',
+      marginLeft: 'auto',
+      transition: theme.transitions.create('transform', {
+        duration: theme.transitions.duration.shortest,
+      }),
+    },
+    header:{
+      // color: "red",
+      // fontSize: "10pt",
+      // height: "1px"
+    },
+    expandOpen: {
+      transform: 'rotate(180deg)',
+    },
+    avatar: {
+      backgroundColor: red[500],
+    },
+  }));
 
 
-export const DashboardCard = (props) => {
-  const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
-  const [cards, setCard] = React.useState([]);
+  export const Post = ({card, props}) => {
+    const classes = useStyles();
 
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
-  useEffect(()=>{
-    setCard(
-      [{
-        body: "This ixmpressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
-        img: "/place-holder.jpeg",
-        reactions: {
-          likes: 0,
-          claps: 0,
-          loves: 0
-        }
-      },{
-        body: "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
-        img: "/place-holder.jpeg",
-        reactions: {
-          likes: 0,
-          claps: 0,
-          loves: 0
-        }
-      }]
-    )
-  },[])
-
-    return (
-      cards.map( card => 
-          {
-            return <Card className={classes.root}>
+    return(
+        <Card className={classes.root}>
               
             <CardActionArea>        
               <CardContent>
@@ -146,7 +115,5 @@ export const DashboardCard = (props) => {
               
             </CardActions>
           </Card>
-          
-        })
-      );
-}
+    )
+  }
