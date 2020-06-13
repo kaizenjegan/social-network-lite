@@ -2,7 +2,7 @@
   "name": "social-network-lite",
   "version": "0.1.0",
   "private": true,
-  "engines" : {
+  "engines": {
     "node": "v11.10.1"
   },
   "dependencies": {
