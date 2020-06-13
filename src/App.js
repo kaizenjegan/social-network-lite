@@ -48,7 +48,7 @@ function App() {
 
     const authLink = setContext((_, { headers }) => {
       const localToken = sessionStorage.getItem("auth");
-      console.log("localToken: ", localToken);
+      // console.log("localToken: ", localToken);
       return {
         headers: {
           ...headers,
