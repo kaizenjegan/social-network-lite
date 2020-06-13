@@ -28,7 +28,7 @@ import {
 
 import { HomePage } from "./HomePage"
 import { Post } from "./Post"
-import { Layout } from './Component/Layout'
+import { MainLayout } from './Layout/MainLayout'
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -101,9 +101,9 @@ function App() {
                         path="/"
                         render={(props) => {
                           return (
-                            <Layout {...props}>
+                            <MainLayout {...props}>
                                 <HomePage {...props}  />
-                            </Layout>
+                            </MainLayout>
                           )
                         }}
                       />  
@@ -112,9 +112,9 @@ function App() {
                         path={"/post/:postId"}
                         render={(props) => {
                           return (
-                            <Layout {...props}>
+                            <MainLayout {...props}>
                                 <Post {...props} />
-                            </Layout>
+                            </MainLayout>
                           )
                         }}
                       />  

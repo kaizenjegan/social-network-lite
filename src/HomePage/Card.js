@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
           <Card className={classes.root}>
           <div className={classes.cardHeader}> 
             <div className={classes.left}>
-              <span className={classes.bold}>header</span> loves this 
+              <span className={classes.bold}>Julie Bijjou</span> loves this 
             </div>
             {/* <div>   
                 <IconButton aria-label="settings">
@@ -85,18 +85,6 @@ const useStyles = makeStyles((theme) => ({
           </div>
               <CardActionArea>        
                 <CardContent>
-                  {/* <CardHeader
-                    className={classes.header}
-                    action={
-                      <IconButton aria-label="settings">
-                        <MoreVertIcon />
-                      </IconButton>
-                    }
-                    title="Mr Chorizo likes this"
-                  /> */}
-                  {/* <Avatar aria-label="recipe" className={classes.avatar}>
-                      R
-                    </Avatar>  */}
                   <Typography variant="body2" color="textSecondary" component="p">
                     {card.body}
                   </Typography>
@@ -116,6 +104,8 @@ const useStyles = makeStyles((theme) => ({
                 </Button>
               </CardActions>
               <CardActions>
+
+                
               <IconButton aria-label="add to favorites">
                 <FavoriteIcon />
               </IconButton>

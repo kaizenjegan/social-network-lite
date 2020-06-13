@@ -7,7 +7,7 @@ import MessageIcon from '@material-ui/icons/Message';
 
 const useStyles = makeStyles((theme) => ({
     root: { 
-        background: "#2867B2", 
+        background: "#28b28d", 
         color: "white", 
         height: "40px"
     },

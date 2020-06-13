@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
       // marginBottom: "45px"
       backgroundColor: '#cecece',
       paddingBottom: "70px"
+    },
+    extraPadding:{
+      padding: "1px"
     }
   }));
   
@@ -16,9 +19,7 @@ export const HomePage = (props) => {
     return(
         <div className={classes.root}>
             <Dashboard {...props} />
-            <div></div>
-            <div></div>
-            <div></div>
+            <div className={classes.extraPadding}></div>
         </div>
     )
 }
