@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import PersonIcon from '@material-ui/icons/Person';
 import MessageIcon from '@material-ui/icons/Message';
+import { SearchBar } from '../Component/SearchBar';
 
 const useStyles = makeStyles((theme) => ({
     root: { 
@@ -30,7 +31,7 @@ export const Header = (props) =>{
     return(
         <div className={classes.root}>
             <div className={classes.inline}> <PersonIcon/> </div>
-            <input className={classes.inline} ></input>  <div className={classes.icon}> <MessageIcon/></div>
+            <SearchBar /> <div className={classes.icon}> <MessageIcon/></div>
             {/* <button class={classes.inline}>search</button>             */}
              {/* <TextField id="standard-search" label="Search field" type="search" style={{ background: "white" }}/><button>search</button> */}
         </div>

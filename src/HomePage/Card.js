@@ -56,9 +56,17 @@ const useStyles = makeStyles((theme) => ({
       paddingTop: "5px",
       height: "26px"
     },
+    inline: {
+      display: "inline-block",
+      width: "100%",
+      border: "solid 1px red"
+    },
     left: {
       float: "left",
       paddingLeft: "10px"
+    },
+    right:{
+      float: "right"
     },
     bold: {
       fontWeight: "bold"
@@ -89,13 +97,15 @@ const useStyles = makeStyles((theme) => ({
                     {card.body}
                   </Typography>
                 </CardContent>
-                <CardMedia
+
+                { card.img && (<CardMedia
                   className={classes.media}
                   image={card.img}
                   title="Contemplative Reptile"
-                />
+                />)}
+                
               </CardActionArea>
-              <CardActions>
+              {/* <CardActions>
                 <Button size="small" color="primary">
                   Reaction
                 </Button>
@@ -103,9 +113,14 @@ const useStyles = makeStyles((theme) => ({
                   Comments
                 </Button>
               </CardActions>
-              <CardActions>
+               */}
+              
+              <div classes={classes.inline}>
+                <div classes={classes.left}>Reaction</div>
+                <div classes={classes.right}> 2 Comments</div>
+              </div>
 
-                
+              <CardActions>
               <IconButton aria-label="add to favorites">
                 <FavoriteIcon />
               </IconButton>
