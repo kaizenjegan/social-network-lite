@@ -13,12 +13,12 @@ import { createHttpLink } from "apollo-link-http";
 import { setContext } from "apollo-link-context";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-// import {
-//   SearchContext,
-//   SearchReducer,
-//   InitialState,
-//   EditSearch,
-// } from "./Contexts/SearchContext";
+import {
+  SearchContext,
+  SearchReducer,
+  InitialState,
+  EditSearch,
+} from "./Contexts/SearchContext";
 
 import {
   UserContext,
@@ -89,7 +89,7 @@ function App() {
   const [client, setClient] = useState(createClient());
 
   return (<div className="App">
-    {/* <SearchContext.Provider value={dispatch}> */}
+    <SearchContext.Provider value={dispatch}>
         <UserContext.Provider value={userDispatch}>
             <ApolloProvider client={client}>
             {/* add ThemeProvider */}
@@ -123,7 +123,7 @@ function App() {
               
             </ApolloProvider>
           </UserContext.Provider>
-    {/* </SearchContext.Provider> */}
+    </SearchContext.Provider>
     
   </div>);
 }
