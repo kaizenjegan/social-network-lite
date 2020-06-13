@@ -15,9 +15,9 @@ import { setContext } from "apollo-link-context";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import {
   SearchContext,
-  searchReducer,
-  initialState,
-  editSearch,
+  SearchReducer,
+  InitialState,
+  EditSearch,
 } from "./Contexts/SearchContext";
 
 import {
@@ -28,14 +28,14 @@ import {
 
 import { HomePage } from "./HomePage"
 import { Post } from "./Post"
-import { Layout } from './Component/Layout'
+import { MainLayout } from './Layout/MainLayout'
 
 import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
   // Context for Search terms / genres / categories
-  const [searchInfo, dispatch] = React.useReducer(searchReducer, initialState);
+  const [searchInfo, dispatch] = React.useReducer(SearchReducer, InitialState);
   const [userInfo, userDispatch] = React.useReducer(
     userReducer,
     initialUserState
@@ -48,7 +48,7 @@ function App() {
 
     const authLink = setContext((_, { headers }) => {
       const localToken = sessionStorage.getItem("auth");
-      console.log("localToken: ", localToken);
+      // console.log("localToken: ", localToken);
       return {
         headers: {
           ...headers,
@@ -101,9 +101,9 @@ function App() {
                         path="/"
                         render={(props) => {
                           return (
-                            <Layout {...props}>
+                            <MainLayout {...props}>
                                 <HomePage {...props}  />
-                            </Layout>
+                            </MainLayout>
                           )
                         }}
                       />  
@@ -112,9 +112,9 @@ function App() {
                         path={"/post/:postId"}
                         render={(props) => {
                           return (
-                            <Layout {...props}>
+                            <MainLayout {...props}>
                                 <Post {...props} />
-                            </Layout>
+                            </MainLayout>
                           )
                         }}
                       />  

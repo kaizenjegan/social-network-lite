@@ -7,9 +7,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      // paddingBottom: '50px'
-      // marginBottom: "45px"
-      backgroundColor: '#cecece'
+      backgroundColor: "#fff", 
+      color: "black",  
+      position: "fixed",
+      bottom: "0", left: "0", right: "0", height: "50px"
     },
     span:{ 
         paddingRight: "20px"
@@ -21,11 +22,8 @@ export const Footer = (props) =>{
     const classes = useStyles();
     
     return(
-        <div style={{ background: "#2867B2", color: "white",  position: "fixed",
-             bottom: "0", left: "0", right: "0", height: "50px"}} className={classes.root}>
-            <span  onClick={() => {
-                    props.history.push("/")
-                  }} className={classes.span}> <HomeIcon/>  </span>
+        <div className={classes.root}>
+            <span  onClick={() => { props.history.push("/")}} className={classes.span}> <HomeIcon/>  </span>
             <span className={classes.span}> <PeopleIcon /> </span>
             <span className={classes.span}> <NotificationsIcon/> </span>
             <span className={classes.span}> <WorkIcon/> </span>

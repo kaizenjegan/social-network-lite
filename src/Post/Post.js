@@ -3,8 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Post as Card } from '../HomePage/Card';
 const useStyles = makeStyles((theme) => ({
     root: {
-      // paddingBottom: '50px'
-      // marginBottom: "45px"
       backgroundColor: '#cecece'
     }
   }));
