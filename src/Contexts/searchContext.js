@@ -1,11 +1,11 @@
 import React from "react"
-export const initialState = {
+export const InitialState = {
   searchTerm: ""
 }
 
 const EDIT = "EDIT"
 
-export const searchReducer = (state, action) => {
+export const SearchReducer = (state, action) => {
   switch (action.type) {
     case EDIT:
       return {
@@ -17,7 +17,7 @@ export const searchReducer = (state, action) => {
   }
 }
 
-export const editSearch = ({ searchParam, value }) => {
+export const EditSearch = ({ searchParam, value }) => {
   return {
     type: EDIT,
     payload: {

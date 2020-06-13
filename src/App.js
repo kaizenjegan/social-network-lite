@@ -15,9 +15,9 @@ import { setContext } from "apollo-link-context";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import {
   SearchContext,
-  searchReducer,
-  initialState,
-  editSearch,
+  SearchReducer,
+  InitialState,
+  EditSearch,
 } from "./Contexts/SearchContext";
 
 import {
@@ -35,7 +35,7 @@ import "./App.css";
 
 function App() {
   // Context for Search terms / genres / categories
-  const [searchInfo, dispatch] = React.useReducer(searchReducer, initialState);
+  const [searchInfo, dispatch] = React.useReducer(SearchReducer, InitialState);
   const [userInfo, userDispatch] = React.useReducer(
     userReducer,
     initialUserState
