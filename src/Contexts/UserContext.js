@@ -23,12 +23,12 @@ export const userReducer = (state, action) => {
       result = state
   }
   sessionStorage.setItem("auth", JSON.stringify(result))
-  console.log(">>>>>>>>>>>>>", result)
+  // console.log(">>>>>>>>>>>>>", result)
   return result
 }
 
 export const replaceUserAuth = (authObject) => {
-  console.log(",,,,,,,,,,,,,,,,,", authObject)
+  // console.log(",,,,,,,,,,,,,,,,,", authObject)
   return {
     type: REPLACE,
     payload: authObject,
