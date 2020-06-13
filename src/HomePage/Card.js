@@ -51,6 +51,18 @@ const useStyles = makeStyles((theme) => ({
     avatar: {
       backgroundColor: red[500],
     },
+    cardHeader:{
+      border: "1px solid #e1e9ee",
+      paddingTop: "5px",
+      height: "26px"
+    },
+    left: {
+      float: "left",
+      paddingLeft: "10px"
+    },
+    bold: {
+      fontWeight: "bold"
+    }
   }));
 
 
@@ -58,62 +70,74 @@ const useStyles = makeStyles((theme) => ({
     const classes = useStyles();
 
     return(
-        <Card className={classes.root}>
-              
-            <CardActionArea>        
-              <CardContent>
-                <CardHeader
-                  className={classes.header}
-                  action={
-                    <IconButton aria-label="settings">
-                      <MoreVertIcon />
-                    </IconButton>
-                  }
-                  title="Mr Chorizo likes this"
+        <div>
+          
+          <Card className={classes.root}>
+          <div className={classes.cardHeader}> 
+            <div className={classes.left}>
+              <span className={classes.bold}>header</span> loves this 
+            </div>
+            {/* <div>   
+                <IconButton aria-label="settings">
+                  <MoreVertIcon />
+                </IconButton>    
+            </div> */}
+          </div>
+              <CardActionArea>        
+                <CardContent>
+                  {/* <CardHeader
+                    className={classes.header}
+                    action={
+                      <IconButton aria-label="settings">
+                        <MoreVertIcon />
+                      </IconButton>
+                    }
+                    title="Mr Chorizo likes this"
+                  /> */}
+                  {/* <Avatar aria-label="recipe" className={classes.avatar}>
+                      R
+                    </Avatar>  */}
+                  <Typography variant="body2" color="textSecondary" component="p">
+                    {card.body}
+                  </Typography>
+                </CardContent>
+                <CardMedia
+                  className={classes.media}
+                  image={card.img}
+                  title="Contemplative Reptile"
                 />
-                {/* <Avatar aria-label="recipe" className={classes.avatar}>
-                    R
-                  </Avatar>  */}
-                <Typography variant="body2" color="textSecondary" component="p">
-                  {card.body}
-                </Typography>
-              </CardContent>
-              <CardMedia
-                className={classes.media}
-                image={card.img}
-                title="Contemplative Reptile"
-              />
-            </CardActionArea>
-            <CardActions>
-              <Button size="small" color="primary">
-                Reaction
-              </Button>
-              <Button size="small" color="primary">
-                Comments
-              </Button>
-            </CardActions>
-            <CardActions>
-            <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
-            </IconButton>
-            <IconButton size="small" color="primary" 
-                onClick={() => {
-                    props.history.push("/post/4273956")
-                  }}>
-                <MessageIcon/>
-                Comment
-            </IconButton>
-            <IconButton aria-label="share">
-              <ShareIcon />
-            </IconButton>
-              {/* <Button size="small" color="primary">
-                Like
-              </Button>
-              <Button size="small" color="primary">
-                Comment
-              </Button> */}
-              
-            </CardActions>
-          </Card>
+              </CardActionArea>
+              <CardActions>
+                <Button size="small" color="primary">
+                  Reaction
+                </Button>
+                <Button size="small" color="primary">
+                  Comments
+                </Button>
+              </CardActions>
+              <CardActions>
+              <IconButton aria-label="add to favorites">
+                <FavoriteIcon />
+              </IconButton>
+              <IconButton size="small" color="primary" 
+                  onClick={() => {
+                      props.history.push("/post/4273956")
+                    }}>
+                  <MessageIcon/>
+                  Comment
+              </IconButton>
+              <IconButton aria-label="share">
+                <ShareIcon />
+              </IconButton>
+                {/* <Button size="small" color="primary">
+                  Like
+                </Button>
+                <Button size="small" color="primary">
+                  Comment
+                </Button> */}
+                
+              </CardActions>
+            </Card>
+          </div>
     )
   }

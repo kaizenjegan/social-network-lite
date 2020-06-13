@@ -67,7 +67,7 @@ export const Dashboard = (props) => {
         }
       },{
         body: "This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.",
-        img: "/place-holder.jpeg",
+        img: "/virus.png",
         reactions: {
           likes: 0,
           claps: 0,
