@@ -1,11 +1,11 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import {Dashboard } from "./Dashboard"
 import { makeStyles } from '@material-ui/core/styles';
+import  { ReactionBar }  from '../Component/ReactionBar';
+import { NewPost } from '../Component/NewPost';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      // paddingBottom: '50px'
-      // marginBottom: "45px"
       backgroundColor: '#cecece',
       paddingBottom: "70px"
     },
@@ -16,9 +16,20 @@ const useStyles = makeStyles((theme) => ({
   
 export const HomePage = (props) => {
     const classes = useStyles();
+    const [showReaction, handleShow] = useState(false);
+    const toggleReaction = () =>{
+      handleShow(!showReaction);
+    } 
+
+    useEffect(()=>{
+      handleShow(true)
+    }, []);
+
     return(
         <div className={classes.root}>
-            <Dashboard {...props} />
+            <NewPost />
+            { showReaction && <ReactionBar />}
+            <Dashboard handleReaction={showReaction} {...props} />
             <div className={classes.extraPadding}></div>
         </div>
     )

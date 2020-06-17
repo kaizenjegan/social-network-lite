@@ -84,6 +84,11 @@ const useStyles = makeStyles((theme) => ({
 
   export const Post = ({card, props}) => {
     const classes = useStyles();
+    const [showReactionBar, setShowReactionBar] = useState(false);
+
+    const handleReactionClick = ()=>{
+      this.setShowReactionBar( !showReactionBar );
+    }
 
     return(
         <div>
@@ -131,7 +136,7 @@ const useStyles = makeStyles((theme) => ({
               <CardActions>
               <IconButton className={classes.cardPadding} aria-label="add to favorites">
                 <FavoriteIcon /> 
-                <span className={classes.cardPaddingLeft}>Like</span>
+                <span className={classes.cardPaddingLeft} onClick={handleReactionClick}>Like</span>
               </IconButton>
               <IconButton className={classes.cardPadding} size="small" color="primary" 
                   onClick={() => {
