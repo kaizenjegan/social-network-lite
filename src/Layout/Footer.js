@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
       bottom: "0", left: "0", right: "0", height: "50px"
     },
     span:{ 
-        paddingRight: "20px"
+        paddingRight: "20px",
+        paddingLeft: "20px"
     }
   }));
   
