@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     root: { 
         background: "#28b28d", 
         color: "white", 
-        height: "40px"
+        height: "50px"
     },
     inline: {
         margin: "10px",
@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
     icon: {
         padding: "8px",
+        paddingTop: "12px",
         float: "left"
     }
   }));
@@ -31,7 +32,8 @@ export const Header = (props) =>{
     return(
         <div className={classes.root}>
             <div className={classes.inline}> <PersonIcon/> </div>
-            <SearchBar /> <div className={classes.icon}> <MessageIcon/></div>
+            <SearchBar /> 
+            <div className={classes.icon}> <MessageIcon/></div>
             {/* <button class={classes.inline}>search</button>             */}
              {/* <TextField id="standard-search" label="Search field" type="search" style={{ background: "white" }}/><button>search</button> */}
         </div>

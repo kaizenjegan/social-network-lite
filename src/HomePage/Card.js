@@ -22,7 +22,6 @@ import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      // paddingBottom: '50px'
       marginTop: "10px"
     },
     media: {
@@ -59,7 +58,8 @@ const useStyles = makeStyles((theme) => ({
     inline: {
       display: "inline-block",
       width: "100%",
-      border: "solid 1px red"
+      marginTop: "10px",
+      fontSize: "Smaller"
     },
     left: {
       float: "left",
@@ -70,6 +70,14 @@ const useStyles = makeStyles((theme) => ({
     },
     bold: {
       fontWeight: "bold"
+    },
+    cardPadding: {
+      paddingRight : "20px"
+    },
+    cardPaddingLeft: {
+      paddingLeft: "10px",
+      color: "gray",
+      fontSize: "Large"
     }
   }));
 
@@ -79,7 +87,6 @@ const useStyles = makeStyles((theme) => ({
 
     return(
         <div>
-          
           <Card className={classes.root}>
           <div className={classes.cardHeader}> 
             <div className={classes.left}>
@@ -115,31 +122,28 @@ const useStyles = makeStyles((theme) => ({
               </CardActions>
                */}
               
-              <div classes={classes.inline}>
-                <div classes={classes.left}>Reaction</div>
-                <div classes={classes.right}> 2 Comments</div>
+              <div className={classes.inline}>
+                <div className={classes.left}>Reaction</div>
+                <div className={classes.right}> 2 Comments</div>
               </div>
 
+               {/* pop up. position absolute*/}
               <CardActions>
-              <IconButton aria-label="add to favorites">
-                <FavoriteIcon />
+              <IconButton className={classes.cardPadding} aria-label="add to favorites">
+                <FavoriteIcon /> 
+                <span className={classes.cardPaddingLeft}>Like</span>
               </IconButton>
-              <IconButton size="small" color="primary" 
+              <IconButton className={classes.cardPadding} size="small" color="primary" 
                   onClick={() => {
                       props.history.push("/post/4273956")
                     }}>
                   <MessageIcon/>
-                  Comment
+                  <span className={classes.cardPaddingLeft}>Comment</span>
               </IconButton>
-              <IconButton aria-label="share">
-                <ShareIcon />
+              <IconButton aria-label="share" className={classes.cardPadding}>
+                <ShareIcon /> <span className={classes.cardPaddingLeft}>Share</span>
               </IconButton>
-                {/* <Button size="small" color="primary">
-                  Like
-                </Button>
-                <Button size="small" color="primary">
-                  Comment
-                </Button> */}
+    
                 
               </CardActions>
             </Card>
