@@ -5,6 +5,13 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied';
+
+import {
+  ReactionContext,
+} from "../Contexts/ReactionContext";
+
+
+
 const useStyles = makeStyles((theme) => ({
     root: {
         background: "#fff",
@@ -28,8 +35,12 @@ const useStyles = makeStyles((theme) => ({
 
 export const ReactionBar = (props) => {
     const classes = useStyles();
-    
-    return (<div className={classes.root}> 
+    const reactionDispatch = React.useContext(ReactionContext)
+
+    const closeReaction =  ()=>{
+      reactionDispatch({type: "CLOSE" })
+    }
+    return (<div className={classes.root} onClick={closeReaction}> 
                 <span className={classes.icons}> <ThumbUpIcon /> </span>
                 <span className={classes.icons}> <FavoriteIcon /> </span>
                 <span className={classes.icons}>  <EmojiObjectsIcon/> </span>

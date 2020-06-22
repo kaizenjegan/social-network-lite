@@ -19,6 +19,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Button from '@material-ui/core/Button';
+import {
+  reactionReducer,
+  initialReaction,
+  ReactionConsumer,
+  ReactionContext
+} from "../Contexts/ReactionContext";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -81,13 +87,26 @@ const useStyles = makeStyles((theme) => ({
     }
   }));
 
+  const init = (initialCount) => {
+    return initialCount;
+  }
+
 
   export const Post = ({card, props}) => {
     const classes = useStyles();
-    const [showReactionBar, setShowReactionBar] = useState(false);
+    const [reaction, dispatchReaction] = React.useReducer(
+      reactionReducer,
+      initialReaction,
+      init
+    );
+
+    const reactionDispatch = React.useContext(ReactionContext)
 
     const handleReactionClick = ()=>{
-      this.setShowReactionBar( !showReactionBar );
+      // this.setShowReactionBar( !showReactionBar );
+      // console.log('dispatch');
+      // dispatchReaction({type: "OPEN"});
+      reactionDispatch({type: "OPEN"});
     }
 
     return(

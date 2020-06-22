@@ -26,9 +26,17 @@ import {
   initialUserState,
 } from "./Contexts/UserContext";
 
-import { HomePage } from "./HomePage"
-import { Post } from "./Post"
-import { MainLayout } from './Layout/MainLayout'
+import {
+  ReactionContext,
+  reactionReducer,
+  initialReaction,
+  ReactionProvider,
+  ReactionConsumer
+} from "./Contexts/ReactionContext";
+
+import { HomePage } from "./HomePage";
+import { Post } from "./Post";
+import { MainLayout } from "./Layout/MainLayout";
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -40,6 +48,7 @@ function App() {
     userReducer,
     initialUserState
   );
+  const [reaction, reactionDispatch] = React.useReducer(reactionReducer, initialReaction);
 
   const createClient = () => {
     const httpLink = createHttpLink({
@@ -88,44 +97,52 @@ function App() {
 
   const [client, setClient] = useState(createClient());
 
-  return (<div className="App">
-    <SearchContext.Provider value={dispatch}>
-        <UserContext.Provider value={userDispatch}>
+
+  const showReaction =  ()=>{
+    // t
+  };
+  // const [reaction, updateReaction] = useState(initialReaction);
+
+  return (
+    <div className="App">
+      <ReactionProvider value={reactionDispatch}>
+        <SearchContext.Provider value={dispatch}>
+          <UserContext.Provider value={userDispatch}>
             <ApolloProvider client={client}>
-            {/* add ThemeProvider */}
-              
-                  <Router>
-                    <Switch>
-                      <Route
-                        exact
-                        path="/"
-                        render={(props) => {
-                          return (
-                            <MainLayout {...props}>
-                                <HomePage {...props}  />
-                            </MainLayout>
-                          )
-                        }}
-                      />  
-                      <Route
-                        exact
-                        path={"/post/:postId"}
-                        render={(props) => {
-                          return (
-                            <MainLayout {...props}>
-                                <Post {...props} />
-                            </MainLayout>
-                          )
-                        }}
-                      />  
-                    </Switch>    
-                </Router>
-              
+              {/* add ThemeProvider */}
+
+              <Router>
+                <Switch>
+                  <Route
+                    exact
+                    path="/"
+                    render={(props) => {
+                      return (
+                        <MainLayout {...props}>
+                          <HomePage reaction={reaction} {...props} />
+                        </MainLayout>
+                      );
+                    }}
+                  />
+                  <Route
+                    exact
+                    path={"/post/:postId"}
+                    render={(props) => {
+                      return (
+                        <MainLayout {...props}>
+                          <Post {...props} />
+                        </MainLayout>
+                      );
+                    }}
+                  />
+                </Switch>
+              </Router>
             </ApolloProvider>
           </UserContext.Provider>
-    </SearchContext.Provider>
-    
-  </div>);
+        </SearchContext.Provider>
+      </ReactionProvider>
+    </div>
+  );
 }
 
 export default App;
