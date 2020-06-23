@@ -8,8 +8,8 @@ const useStyles = makeStyles((theme) => ({
         position: "fixed",
         marginLeft: "auto",
         marginRight: "auto",
-        left: 130,
-        right: 130,
+        left: "100px",
+        right: "100px",
         textAlign: "center",
         zIndex: 1000000000,
         paddingBottom: "10px",
@@ -17,10 +17,14 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: "10px"
       },
       refresh: {
-        //   marginTop: "2px"
+        float: "left",
+        textAlign: "center",
+        paddingLeft: "40px",
+        paddingRight: "10px"
       },
       typeFace: {
-        paddingTop: "-1px"
+        float: "left",
+        paddingTop: "4px"
       }
   }));
 
@@ -28,8 +32,8 @@ export const NewPost = () =>{
     const classes = useStyles();
     
     return (<div className={classes.root}> 
-             <span className={classes.refresh}> <RefreshIcon/> </span>
-             <span className={classes.typeFace}> New Post  </span>
+             <div className={classes.refresh}> <RefreshIcon/> </div>
+             <div className={classes.typeFace}> New Post </div>
             </div> )
 }
 

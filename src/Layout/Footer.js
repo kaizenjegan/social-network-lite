@@ -4,13 +4,16 @@ import PeopleIcon from '@material-ui/icons/People';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import WorkIcon from '@material-ui/icons/Work';
 import { makeStyles } from '@material-ui/core/styles';
+import AddIcon from '@material-ui/icons/Add';
 
 const useStyles = makeStyles((theme) => ({
     root: {
       backgroundColor: "#fff", 
       color: "black",  
       position: "fixed",
-      bottom: "0", left: "0", right: "0", height: "50px"
+      bottom: "0", left: "0", right: "0", height: "50px",
+      paddingTop: "15px",
+      borderTop: "1px solid #d6d6d6"
     },
     span:{ 
         paddingRight: "20px",
@@ -22,10 +25,16 @@ const useStyles = makeStyles((theme) => ({
 export const Footer = (props) =>{
     const classes = useStyles();
     
+    // change to div
     return(
         <div className={classes.root}>
             <span  onClick={() => { props.history.push("/")}} className={classes.span}> <HomeIcon/>  </span>
             <span className={classes.span}> <PeopleIcon /> </span>
+            
+            <span className={classes.span}> <AddIcon /> 
+              {/* <span>post</span> */}
+            </span>
+
             <span className={classes.span}> <NotificationsIcon/> </span>
             <span className={classes.span}> <WorkIcon/> </span>
 {/* , PeopleIcon}       */}
