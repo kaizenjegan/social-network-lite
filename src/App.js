@@ -37,6 +37,7 @@ import {
 import { HomePage } from "./HomePage";
 import { Post } from "./Post";
 import { MainLayout } from "./Layout/MainLayout";
+import { NewPost } from './NewPost';
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -131,6 +132,17 @@ function App() {
                       return (
                         <MainLayout {...props}>
                           <Post {...props} />
+                        </MainLayout>
+                      );
+                    }}
+                  />
+                  <Route
+                    exact
+                    path={"/post/new"}
+                    render={(props) => {
+                      return (
+                        <MainLayout {...props}>
+                          <NewPost {...props} />
                         </MainLayout>
                       );
                     }}

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react"
 import {Dashboard } from "./Dashboard"
 import { makeStyles } from '@material-ui/core/styles';
 import  { ReactionBar }  from '../Component/ReactionBar';
-import { NewPost } from '../Component/NewPost';
+import { NewPostRefreshBar } from '../Component/NewPostRefreshBar';
 import {
   ReactionContext,
   reactionReducer,
@@ -43,7 +43,7 @@ export const HomePage = (props) => {
     return(
         
           <div className={classes.root}>
-              <NewPost />
+              <NewPostRefreshBar />
               { reaction.show && <ReactionBar />}
               <Dashboard  {...props} />
               <div className={classes.extraPadding}></div>

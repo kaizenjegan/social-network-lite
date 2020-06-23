@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
       }
   }));
 
-export const NewPost = () =>{
+export const NewPostRefreshBar = () =>{
     const classes = useStyles();
     
     return (<div className={classes.root}> 

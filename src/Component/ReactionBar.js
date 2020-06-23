@@ -25,11 +25,16 @@ const useStyles = makeStyles((theme) => ({
         zIndex: 1000000000,
         paddingBottom: "10px",
         borderRadius: "25px",
-        paddingTop: "10px"
+        paddingTop: "10px",
+        border: "1px solid #d6d6d6"
       },
       icons: {
         //   marginTop: "2px"
-        paddingLeft: "10px"
+        paddingLeft: "10px",
+      },
+      largeIcon: {
+        width: 160,
+        height: 160
       }
   }));
 
@@ -41,9 +46,9 @@ export const ReactionBar = (props) => {
       reactionDispatch({type: "CLOSE" })
     }
     return (<div className={classes.root} onClick={closeReaction}> 
-                <span className={classes.icons}> <ThumbUpIcon /> </span>
-                <span className={classes.icons}> <FavoriteIcon /> </span>
-                <span className={classes.icons}>  <EmojiObjectsIcon/> </span>
-                <span className={classes.icons}>  <SentimentDissatisfiedIcon /> </span>
+                <span className={classes.icons}> <ThumbUpIcon iconStyle={classes.largeIcon} /> </span>
+                <span className={classes.icons}> <FavoriteIcon iconStyle={classes.largeIcon} /> </span>
+                <span className={classes.icons}>  <EmojiObjectsIcon iconStyle={classes.largeIcon} /> </span>
+                <span className={classes.icons}>  <SentimentDissatisfiedIcon iconStyle={classes.largeIcon} /> </span>
             </div> )
 }
