@@ -38,6 +38,9 @@ import { HomePage } from "./HomePage";
 import { Post } from "./Post";
 import { MainLayout } from "./Layout/MainLayout";
 import { NewPost } from './NewPost';
+import { MyNetwork } from './MyNetwork';
+import { Jobs } from './Jobs';
+import { Notification } from './Notification';
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -138,11 +141,46 @@ function App() {
                   />
                   <Route
                     exact
-                    path={"/post/new"}
+                    path={"/newPost"}
                     render={(props) => {
                       return (
                         <MainLayout {...props}>
                           <NewPost {...props} />
+                        </MainLayout>
+                      );
+                    }}
+                  />
+                  <Route
+                    exact
+                    path={"/myNetwork"}
+                    render={(props) => {
+                      return (
+                        <MainLayout {...props}>
+                          <MyNetwork {...props} />
+                        </MainLayout>
+                      );
+                    }}
+                  />
+
+                  <Route
+                    exact
+                    path={"/jobs"}
+                    render={(props) => {
+                      return (
+                        <MainLayout {...props}>
+                          <Jobs {...props} />
+                        </MainLayout>
+                      );
+                    }}
+                  />
+
+                  <Route
+                    exact
+                    path={"/Notification"}
+                    render={(props) => {
+                      return (
+                        <MainLayout {...props}>
+                          <Notification {...props} />
                         </MainLayout>
                       );
                     }}

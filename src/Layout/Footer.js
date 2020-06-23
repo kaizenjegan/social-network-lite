@@ -29,14 +29,15 @@ export const Footer = (props) =>{
     return(
         <div className={classes.root}>
             <span  onClick={() => { props.history.push("/")}} className={classes.span}> <HomeIcon/>  </span>
-            <span className={classes.span}> <PeopleIcon /> </span>
             
-            <span className={classes.span}> <AddIcon /> 
+            <span className={classes.span} onClick={() => { props.history.push("/myNetwork")}} > <PeopleIcon /> </span>
+            
+            <span onClick={() => { props.history.push("/newPost")}} className={classes.span}> <AddIcon /> 
               {/* <span>post</span> */}
             </span>
 
-            <span className={classes.span}> <NotificationsIcon/> </span>
-            <span className={classes.span}> <WorkIcon/> </span>
+            <span onClick={() => { props.history.push("/notification")}}  className={classes.span}> <NotificationsIcon/> </span>
+            <span onClick={() => { props.history.push("/jobs")}}  className={classes.span}> <WorkIcon/> </span>
 {/* , PeopleIcon}       */}
         </div>
     )
