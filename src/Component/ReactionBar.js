@@ -53,7 +53,7 @@ export const ReactionBar = (props) => {
     
     const handleScroll = (e) => {
         const window = e.currentTarget;
-        const position = (prev - window.scrollY);
+        const position = (prev - window.pageYOffset);
 
         if( Math.abs(position) > 40){
                 reactionDispatch({type: "CLOSE" })
