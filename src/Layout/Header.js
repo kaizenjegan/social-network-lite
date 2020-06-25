@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Input } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
@@ -29,13 +29,16 @@ const useStyles = makeStyles((theme) => ({
 
 export const Header = (props) =>{
     const classes = useStyles();
+    
+
     return(
-        <div className={classes.root}>
-            <div className={classes.inline}> <PersonIcon/> </div>
-            <SearchBar /> 
-            <div className={classes.icon}> <MessageIcon/></div>
-            {/* <button class={classes.inline}>search</button>             */}
-             {/* <TextField id="standard-search" label="Search field" type="search" style={{ background: "white" }}/><button>search</button> */}
-        </div>
+            <div className={classes.root}>
+        
+                    <div className={classes.inline}> <PersonIcon/> </div>
+                    <SearchBar /> 
+                    <div className={classes.icon}> <MessageIcon/></div>
+                    
+                
+            </div>
     )
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from "react";
 import { makeStyles } from '@material-ui/core/styles';
 // import RefreshIcon from '@material-ui/icons/Refresh';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
@@ -42,13 +42,35 @@ export const ReactionBar = (props) => {
     const classes = useStyles();
     const reactionDispatch = React.useContext(ReactionContext)
 
+    // const [showReactionBar, setReactionBar] = useState(true);
+    let prev = 0;
+
+    useEffect(()=>{
+        prev = window.scrollY;
+        
+        window.addEventListener('scroll', handleScroll);
+    },[]);
+    
+    const handleScroll = (e) => {
+        const window = e.currentTarget;
+        const position = (prev - window.pageYOffset);
+
+        if( Math.abs(position) > 40){
+                reactionDispatch({type: "CLOSE" })
+        }
+        
+        prev = window.scrollY;  
+    };
+
     const closeReaction =  ()=>{
       reactionDispatch({type: "CLOSE" })
     }
-    return (<div className={classes.root} onClick={closeReaction}> 
-                <span className={classes.icons}> <ThumbUpIcon iconStyle={classes.largeIcon} /> </span>
-                <span className={classes.icons}> <FavoriteIcon iconStyle={classes.largeIcon} /> </span>
-                <span className={classes.icons}>  <EmojiObjectsIcon iconStyle={classes.largeIcon} /> </span>
-                <span className={classes.icons}>  <SentimentDissatisfiedIcon iconStyle={classes.largeIcon} /> </span>
-            </div> )
+    return (
+          <div className={classes.root} onClick={closeReaction}> 
+                <span className={classes.icons}> <ThumbUpIcon /> </span>
+                <span className={classes.icons}> <FavoriteIcon  /> </span>
+                <span className={classes.icons}>  <EmojiObjectsIcon  /> </span>
+                <span className={classes.icons}>  <SentimentDissatisfiedIcon /> </span>
+            </div> 
+        )
 }
