@@ -10,6 +10,7 @@ import clsx from 'clsx';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Button from '@material-ui/core/Button';
 import { Post } from './Card';
+import { useQuery } from '@apollo/react-hooks';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,12 +45,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+export const GET_CART_ITEMS = gql`
+  query GetCartItems {
+    cartItems @client
+  }
+`;
 
 export const Dashboard = (props) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [cards, setCard] = React.useState([]);
 
+  //todo add type
+  const { data, loading, error } = useQuery(
+    GET_CART_ITEMS
+  );
 
   const handleExpandClick = () => {
     setExpanded(!expanded);

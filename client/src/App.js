@@ -99,13 +99,7 @@ function App() {
     return client;
   };
 
-  const [client, setClient] = useState(createClient());
-
-
-  const showReaction =  ()=>{
-    // t
-  };
-  // const [reaction, updateReaction] = useState(initialReaction);
+  const [client, setClient] = useState(createClient()); //TS get type def
 
   return (
     <div className="App">
