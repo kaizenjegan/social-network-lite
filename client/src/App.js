@@ -56,7 +56,7 @@ function App() {
 
   const createClient = () => {
     const httpLink = createHttpLink({
-      uri: `https://localhost:4000/graphql`,
+      uri: `http://localhost:4000/graphql`,
     });
 
     const authLink = setContext((_, { headers }) => {
@@ -74,7 +74,7 @@ function App() {
 
     const wsLink = new WebSocketLink({
       // TODO : fix so not hardcoded localhost
-      uri: `ws://localhost:3001/graphql`,
+      uri: `ws://localhost:4000/graphql`,
       options: {
         // reconnect: true,
         connectionParams: {

@@ -3,14 +3,18 @@ const typeDefs = require('./schema');
 const MockAPI = require('./datasources/dashboard');
 const resolvers = require('./resolvers');
 
+const corsOptions = {
+    origin: "*",
+    credentials: true
+  };
 
-console.log(MockAPI);
 
 const server = new ApolloServer({ 
     typeDefs,
     resolvers,
     playground: true,
     introspection:  true,
+    cors: corsOptions,
     context: async ({ req }) => {
         let headers = {headers: req.headers}
         if(req.headers.authorization){

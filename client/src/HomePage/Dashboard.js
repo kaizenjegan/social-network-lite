@@ -47,7 +47,10 @@ const useStyles = makeStyles((theme) => ({
 
 export const GET_DASHBOARD_CARDS = gql`
   query getDashboard {
-    dashboard
+    dashboard(id: "1234") {
+      id
+      body
+    }
   }
 `;
 
@@ -98,13 +101,18 @@ export const Dashboard = (props) => {
       ]
     )
 
-    console.log("graphQL data");
+    console.log("graphQL dashboard");
     console.log(data);
   },[])
+  
+  // if (!data) 
+  //   return <p>Not found</p>
+  // else
+  //   return <p> {data.dashboard.body } </p>
 
     return (
       <Fragment>
-        <p>{data}</p>
+        {/* <p>{data || data.Dashboard ||  data.dashboard.body}</p> */}
         {cards.map( card => 
             {
               return <Post props={props} card={card}></Post>

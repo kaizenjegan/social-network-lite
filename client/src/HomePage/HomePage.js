@@ -43,7 +43,7 @@ export const HomePage = (props) => {
     return(
         
           <div className={classes.root}>
-              <NewPostRefreshBar />
+              {/* <NewPostRefreshBar /> */}
               { reaction.show && <ReactionBar />}
               <Dashboard  {...props} />
               <div className={classes.extraPadding}></div>
