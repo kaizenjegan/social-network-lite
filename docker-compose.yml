@@ -1,0 +1,17 @@
+server:
+  build: ./server
+  ports:
+    - "4000:3001"
+  # links:
+  #   - database
+client:
+  build: ./client
+  stdin_open: true
+  ports:
+      - "4001:3000"
+  restart: always
+
+# database: # name of the third service
+#   build: database # specify the directory of the Dockerfile
+#   container_name: database-container
+#   restart: always

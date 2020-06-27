@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
@@ -11,7 +11,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import Button from '@material-ui/core/Button';
 import { Post } from './Card';
 import { useQuery } from '@apollo/react-hooks';
-
+import gql from 'graphql-tag';
 const useStyles = makeStyles((theme) => ({
   root: {
     // paddingBottom: '50px'
@@ -45,9 +45,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const GET_CART_ITEMS = gql`
-  query GetCartItems {
-    cartItems @client
+export const GET_DASHBOARD_CARDS = gql`
+  query getDashboard {
+    dashboard
   }
 `;
 
@@ -58,7 +58,7 @@ export const Dashboard = (props) => {
 
   //todo add type
   const { data, loading, error } = useQuery(
-    GET_CART_ITEMS
+    GET_DASHBOARD_CARDS
   );
 
   const handleExpandClick = () => {
@@ -97,12 +97,20 @@ export const Dashboard = (props) => {
       
       ]
     )
+
+    console.log("graphQL data");
+    console.log(data);
   },[])
 
     return (
-      cards.map( card => 
-          {
-            return <Post props={props} card={card}></Post>
-        })
-      );
+      <Fragment>
+        <p>{data}</p>
+        {cards.map( card => 
+            {
+              return <Post props={props} card={card}></Post>
+          })
+        }
+      </Fragment>
+    )
+      
 }
