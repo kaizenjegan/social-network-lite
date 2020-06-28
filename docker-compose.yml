@@ -2,6 +2,9 @@ server:
   build: ./server
   ports:
     - "4000:3001"
+  volumes: 
+      - ./server://usr/src/app
+      - /usr/src/app/node_modules
   # links:
   #   - database
 client:
