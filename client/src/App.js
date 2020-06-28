@@ -34,12 +34,12 @@ import {
   ReactionConsumer
 } from "./contexts/ReactionContext";
 
-import { HomePage } from "./pages/homePage";
+import { HomePage } from "./pages/home";
 import { Post } from "./Post";
 import { MainLayout } from "./Layout/MainLayout";
 import { NewPost } from './NewPost';
 import { MyNetwork } from './MyNetwork';
-import { Jobs } from './Jobs';
+import { Jobs } from './pages/jobs';
 import { Notification } from './Notification';
 
 import logo from "./logo.svg";
