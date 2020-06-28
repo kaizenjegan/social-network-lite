@@ -20,10 +20,6 @@ export const SearchBar = (props) =>{
     return(
         <div>
         <input className={classes.inline} ></input>
-            {/* <FormControl className={classes.margin}>
-            <InputLabel htmlFor="demo-customized-textbox">Age</InputLabel>
-            <BootstrapInput id="demo-customized-textbox" />
-        </FormControl> */}
         </div>
     )
 }

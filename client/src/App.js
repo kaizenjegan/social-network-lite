@@ -18,13 +18,13 @@ import {
   SearchReducer,
   InitialState,
   EditSearch,
-} from "./Contexts/SearchContext";
+} from "./contexts/SearchContext";
 
 import {
   UserContext,
   userReducer,
   initialUserState,
-} from "./Contexts/UserContext";
+} from "./contexts/UserContext";
 
 import {
   ReactionContext,
@@ -32,15 +32,15 @@ import {
   initialReaction,
   ReactionProvider,
   ReactionConsumer
-} from "./Contexts/ReactionContext";
+} from "./contexts/ReactionContext";
 
-import { HomePage } from "./HomePage";
-import { Post } from "./Post";
-import { MainLayout } from "./Layout/MainLayout";
-import { NewPost } from './NewPost';
-import { MyNetwork } from './MyNetwork';
-import { Jobs } from './Jobs';
-import { Notification } from './Notification';
+import { HomePage } from "./pages/home";
+import { Post } from "./pages/post";
+import { MainLayout } from "./pages/layout/MainLayout";
+import { NewPost } from './pages/newPost';
+import { MyNetwork } from './pages/myNetwork';
+import { Jobs } from './pages/jobs';
+import { Notification } from './pages/notifications';
 
 import logo from "./logo.svg";
 import "./App.css";
