@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
@@ -10,7 +10,8 @@ import clsx from 'clsx';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Button from '@material-ui/core/Button';
 import { Post } from './Card';
-
+import { useQuery } from '@apollo/react-hooks';
+import gql from 'graphql-tag';
 const useStyles = makeStyles((theme) => ({
   root: {
     // paddingBottom: '50px'
@@ -44,12 +45,31 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+export const GET_DASHBOARD_CARDS = gql`
+  query getDashboard {
+    dashboard(id: "1") {
+      id
+      body
+      image
+      reaction{
+      	like
+        love
+        celebration
+        insightful
+      }
+    }
+  }
+`;
 
 export const Dashboard = (props) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [cards, setCard] = React.useState([]);
 
+  //todo add type
+  const { data, loading, error } = useQuery(
+    GET_DASHBOARD_CARDS
+  );
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -88,11 +108,17 @@ export const Dashboard = (props) => {
       ]
     )
   },[])
-
-    return (
-      cards.map( card => 
-          {
-            return <Post props={props} card={card}></Post>
-        })
-      );
+  
+  if (!data) 
+    return <p>Not found</p>
+  else
+    return ((
+      <Fragment>
+        {data.dashboard.map( card => 
+            {
+              return <Post props={props} card={card}></Post>
+          })
+        }
+      </Fragment>
+    ))    
 }

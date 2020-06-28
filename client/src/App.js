@@ -56,7 +56,7 @@ function App() {
 
   const createClient = () => {
     const httpLink = createHttpLink({
-      uri: `https://localhost:3001/graphql`,
+      uri: `http://localhost:4000/graphql`,
     });
 
     const authLink = setContext((_, { headers }) => {
@@ -74,7 +74,7 @@ function App() {
 
     const wsLink = new WebSocketLink({
       // TODO : fix so not hardcoded localhost
-      uri: `ws://localhost:3001/graphql`,
+      uri: `ws://localhost:4000/graphql`,
       options: {
         // reconnect: true,
         connectionParams: {
@@ -99,13 +99,7 @@ function App() {
     return client;
   };
 
-  const [client, setClient] = useState(createClient());
-
-
-  const showReaction =  ()=>{
-    // t
-  };
-  // const [reaction, updateReaction] = useState(initialReaction);
+  const [client, setClient] = useState(createClient()); //TS get type def
 
   return (
     <div className="App">
