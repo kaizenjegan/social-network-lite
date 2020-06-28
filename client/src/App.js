@@ -40,7 +40,7 @@ import { MainLayout } from "./pages/layout/MainLayout";
 import { NewPost } from './pages/newPost';
 import { MyNetwork } from './pages/myNetwork';
 import { Jobs } from './pages/jobs';
-import { Notification } from './Notification';
+import { Notification } from './pages/notifications';
 
 import logo from "./logo.svg";
 import "./App.css";
