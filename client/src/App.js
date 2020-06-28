@@ -35,10 +35,10 @@ import {
 } from "./contexts/ReactionContext";
 
 import { HomePage } from "./pages/home";
-import { Post } from "./Post";
-import { MainLayout } from "./Layout/MainLayout";
-import { NewPost } from './NewPost';
-import { MyNetwork } from './MyNetwork';
+import { Post } from "./pages/post";
+import { MainLayout } from "./pages/layout/MainLayout";
+import { NewPost } from './pages/newPost';
+import { MyNetwork } from './pages/myNetwork';
 import { Jobs } from './pages/jobs';
 import { Notification } from './Notification';
 
