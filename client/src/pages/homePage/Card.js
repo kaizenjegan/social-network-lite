@@ -24,7 +24,7 @@ import {
   initialReaction,
   ReactionConsumer,
   ReactionContext
-} from "../Contexts/ReactionContext";
+} from "../../contexts/ReactionContext";
 
 const useStyles = makeStyles((theme) => ({
     root: {

@@ -8,7 +8,7 @@ import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied'
 
 import {
   ReactionContext,
-} from "../Contexts/ReactionContext";
+} from "../contexts/ReactionContext";
 
 
 

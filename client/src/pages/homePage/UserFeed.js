@@ -61,7 +61,7 @@ export const GET_DASHBOARD_CARDS = gql`
   }
 `;
 
-export const Dashboard = (props) => {
+export const UserFeed = (props) => {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
   const [cards, setCard] = React.useState([]);

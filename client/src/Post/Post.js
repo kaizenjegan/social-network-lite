@@ -1,6 +1,6 @@
 import React from "react"
 import { makeStyles } from '@material-ui/core/styles';
-import { Post as Card } from '../HomePage/Card';
+import { Post as Card } from '../pages/homePage/Card';
 const useStyles = makeStyles((theme) => ({
     root: {
       backgroundColor: '#cecece'

@@ -18,13 +18,13 @@ import {
   SearchReducer,
   InitialState,
   EditSearch,
-} from "./Contexts/SearchContext";
+} from "./contexts/SearchContext";
 
 import {
   UserContext,
   userReducer,
   initialUserState,
-} from "./Contexts/UserContext";
+} from "./contexts/UserContext";
 
 import {
   ReactionContext,
@@ -32,9 +32,9 @@ import {
   initialReaction,
   ReactionProvider,
   ReactionConsumer
-} from "./Contexts/ReactionContext";
+} from "./contexts/ReactionContext";
 
-import { HomePage } from "./HomePage";
+import { HomePage } from "./pages/homePage";
 import { Post } from "./Post";
 import { MainLayout } from "./Layout/MainLayout";
 import { NewPost } from './NewPost';
