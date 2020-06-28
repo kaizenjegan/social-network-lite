@@ -4,7 +4,6 @@ module.exports = class MockAPI {
     }
 
     getComment(comments){
-        //1,2,3,4,5,6,7
         const CommentDatabase = [{
                 id: 1,
                 body: "one comment body",
@@ -163,16 +162,15 @@ module.exports = class MockAPI {
         return [{
                     id: "c340443a-ca4e-4bd3-abc2-9e819c41d7eb",
                     user: 1,
-                    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
-                    image: "/some/postimage.png",
+                    body: "some post Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
+                    image: "/place-holder0.jpeg",
                     comment: [1, 2, 3],
                     reaction: [16, 17, 18]
                 },
                 {
                     id: "8f8ad67a-6a39-4200-8fcf-541fe857ec56",
                     user: 1,
-                    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
-                    image: "/some/postimage.png",
+                    body: "this post will have no images. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                     comment: [4, 5, 6],
                     reaction: [13, 14, 15]
                 },
@@ -180,7 +178,7 @@ module.exports = class MockAPI {
                     id: "cc4a4a5e-0f49-4de8-ad4a-ed2d800689e5",
                     user: 1,
                     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi",
-                    image: "/some/postimage.png",
+                    image: "/place-holder-2.jpeg",
                     comment: [7, 8, 9],
                     reaction: [10, 11, 12]
                 }

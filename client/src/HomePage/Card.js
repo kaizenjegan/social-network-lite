@@ -129,9 +129,9 @@ const useStyles = makeStyles((theme) => ({
                   </Typography>
                 </CardContent>
 
-                { card.img && (<CardMedia
+                { card.image && (<CardMedia
                   className={classes.media}
-                  image={card.img}
+                  image={card.image}
                   title="Contemplative Reptile"
                 />)}
                 
